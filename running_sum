@@ -1,0 +1,17 @@
+# 1480. Running Sum of 1d Array
+# Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]).
+
+# Return the running sum of nums.
+class Solution(object):
+    def runningSum(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        sum = 0
+        sums_list = []
+        for i in range(len(nums)):
+            sum += nums[i]
+            sums_list.append(sum)
+        
+        return sums_list
