@@ -1,0 +1,19 @@
+# 876. Middle of the Linked List 
+# Given the head of a singly linked list, return the middle node of the linked list.
+
+# If there are two middle nodes, return the second middle node.
+
+class Solution(object):
+    def middleNode(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        end = head
+        middle = head
+
+        while(end is not None and end.next is not None):
+            end = end.next.next    # The end node moves two positions ahead
+            middle = middle.next   # The middle node moves one position forward
+
+        return middle
