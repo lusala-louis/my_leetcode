@@ -1,0 +1,28 @@
+(* 342. Power of Four *)
+
+(* Given an integer n, return true if it is a power of four. Otherwise, return false.
+An integer n is a power of four, if there exists an integer x such that n == 4x.
+
+Example 1:
+Input: n = 16
+Output: true  *)
+
+
+class Solution(object):
+    def isPowerOfFour(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        for i in range(16):
+(*            Iterate through powers of 4 from 4^0 to 4^15 
+our constraints are 2e31 <= n <= 2e31 - 1 so max number to check it power is log(2e31) base 4 which is 15.5*)
+            power_of_four = 4 ** i
+
+            if power_of_four == n:
+                return True
+
+            if power_of_four > n:
+                return False
+                
+        return False
